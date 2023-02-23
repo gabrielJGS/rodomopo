@@ -3,14 +3,18 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import logo from "/public/logo.png";
 
+
+
 export default function Home() {
-  const audioRef = useRef();
+  const audioRef = useRef<HTMLAudioElement>(null);
 
   const [isActive, setIsActive] = useState(false);
   const [timer, setTimer] = useState(0);
   const [dateFinish, setDateFinish] = useState<null | Date>(null);
   const [type, setType] = useState("w");
   const [count, setCount] = useState(0);
+  const [title, setTitle] = useState("Rodomopo");
+
 
   useEffect(() => {
     let interval: any = null;
@@ -19,13 +23,16 @@ export default function Home() {
         const dateDifference = Math.floor((dateFinish!.getTime() - new Date().getTime()) / 1000);
         if (dateDifference <= 0) {
           handleFinishedCount();
+          setTitle("Rodomopo");
           clearInterval(interval);
         } else {
           setTimer(dateDifference);
+          setTitle("Rodomopo - " + formatTimer());
         }
       }, 1000);
     } else if (!isActive && timer !== 0) {
       handleFinishedCount();
+      setTitle("Rodomopo");
       clearInterval(interval);
     }
     return () => clearInterval(interval);
@@ -57,6 +64,8 @@ export default function Home() {
 
   const handleChangeType = (tipo: string) => {
     setType(tipo);
+    setIsActive(false);
+    setDateFinish(null);
     setTimer(0);
   };
 
@@ -84,7 +93,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Rodomopo</title>
+        <title>{title}</title>
         <meta name="description" content="Pomodoro ao contrário" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
