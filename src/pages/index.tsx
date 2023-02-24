@@ -50,7 +50,7 @@ export default function Home() {
       return;
     }
     // Se tipo == ciclo então 5 min, se não 15 min
-    const qtd = type === "w" ? 5 * 6000 : 15 * 60000;
+    const qtd = type === "w" ? 5 * 60000 : 15 * 60000;
     const intervalDate = new Date(new Date().getTime() + qtd);
     setDateFinish(intervalDate);
     setTimer(qtd / 1000);
