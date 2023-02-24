@@ -7,7 +7,7 @@ const nextConfig = {
   images: {
     unoptimized: true,
     loader: "imgix",
-    path: isProd ? "https://gabrieljgs.github.io/rodomopo/" : "/",
+    path: isProd ? "https://gabrieljgs.github.io/rodomopo/" : "/rodomopo",
     // formats: ["image/avif", "image/webp"],
     // remotePatterns: [
     //   {
