@@ -134,7 +134,7 @@ export default function Home() {
           </div>
         </nav>
         <section className="py-4 max-h-screen">
-          <div className="h-[70vh] bg-white border-2 border-violet-800 max-w-screen-xl mx-1 rounded-3xl flex flex-col justify-between items-center py-16 lg:mx-auto">
+          <div className="h-[88vh] md:h-[92vh] bg-white border-2 border-violet-800 max-w-screen-xl mx-1 rounded-3xl flex flex-col justify-evenly items-center py-16 lg:mx-auto">
             <div className="flex flex-row gap-3 font-bold">
               <button
                 className={
@@ -186,6 +186,23 @@ export default function Home() {
             </div>
           </div>
         </section>
+        <section className="text-white text-center">
+          <h4>Esta aplicação se trata de uma paródia da técnica Pomodoro</h4>
+          <p>
+            A ideia nasceu de um post no Twitter, aonde vi uma piada sobre a "técnica rodomopo", 5 minutos trabalhando e
+            15 descansando
+          </p>
+          <p>
+            Depois de um tempo, resolvi fazer alguns desafios front-end e um deles constava um app Pomodoro, então para
+            diferenciar meus projetos um pouco, aproveitei para por a ideia em prática
+          </p>
+          <p>
+            Pode parecer um pouco absurdo, mas ela ainda pode fazer sentido naqueles dias em que você não está tão afim
+            de realizar sua tarefa
+          </p>
+          <p>Afinal, faça pouco ou faça muito, mas faça algo!</p>
+        </section>
+        <br />
         <audio ref={audioRef} src="/sound/bell.mp3" className="hidden" />
       </main>
     </>
