@@ -7,7 +7,7 @@ const nextConfig = {
   images: {
     unoptimized: true,
     loader: "imgix",
-    path: isProd ? "https://gabrieljs.online" : "/",
+    path: isProd ? "https://gabrieljgs.github.io/rodomopo/" : "/",
     // formats: ["image/avif", "image/webp"],
     // remotePatterns: [
     //   {
@@ -24,7 +24,7 @@ const nextConfig = {
     //   }
     // ],
   },
-  assetPrefix: isProd ? "https://gabrieljs.online" : "http://localhost:3000",
+  assetPrefix: isProd ? "https://gabrieljgs.github.io/rodomopo/" : "http://localhost:3000",
 };
 
 export default nextConfig;
