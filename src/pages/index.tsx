@@ -109,7 +109,7 @@ export default function Home() {
         <link rel="icon" href="./favicon.ico" />
       </Head>
       <main className="bg-violet-900 min-h-screen">
-        <nav className="bg-white flex flex-row justify-between align-middle mx-auto max-w-full px-4 py-1 rounded-b-xl border-2 border-t-0 border-violet-800 text-violet-800 text-lg">
+        <nav className="bg-white flex flex-col md:flex-row justify-between align-middle mx-1 max-w-full px-4 py-1 rounded-b-xl border-2 border-t-0 border-violet-800 text-violet-800 text-lg">
           <div className="flex flex-row items-end">
             <Image src={logo} alt="Eggplant" height={40} width={40} />
             <h4 className="font-bold text-xl ml-2">Rodomopo</h4>
@@ -134,7 +134,7 @@ export default function Home() {
           </div>
         </nav>
         <section className="py-4 max-h-screen">
-          <div className="h-[70vh] bg-white border-2 border-violet-800 max-w-screen-xl mx-auto rounded-3xl flex flex-col justify-between items-center py-16">
+          <div className="h-[70vh] bg-white border-2 border-violet-800 max-w-screen-xl mx-1 rounded-3xl flex flex-col justify-between items-center py-16 lg:mx-auto">
             <div className="flex flex-row gap-3 font-bold">
               <button
                 className={
@@ -172,7 +172,7 @@ export default function Home() {
               {formatTimer()}
             </span>
             <button
-              className="rounded-full font-bold text-white bg-violet-900 w-1/5 p-4 transition-all hover:scale-125 hover:bg-violet-700"
+              className="rounded-full font-bold text-white bg-violet-900 md:w-1/5 p-4 transition-all hover:scale-125 hover:bg-violet-700"
               onClick={handleStartCount}
             >
               {isActive ? "Parar" : "Iniciar"}
