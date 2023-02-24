@@ -106,7 +106,7 @@ export default function Home() {
         <title>{title}</title>
         <meta name="description" content="Pomodoro ao contrário" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/public/favicon.ico" />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="bg-violet-900 min-h-screen">
         <nav className="bg-white flex flex-row justify-between align-middle mx-auto max-w-full px-4 py-1 rounded-b-xl border-2 border-t-0 border-violet-800 text-violet-800 text-lg">
