@@ -42,7 +42,7 @@ export default function Home() {
       clearInterval(interval);
     }
     return () => clearInterval(interval);
-  }, [isActive, timer]);
+  }, [isActive, timer, dateFinish]);
 
   const handleStartCount = () => {
     if (isActive) {
@@ -189,7 +189,7 @@ export default function Home() {
         <section className="text-white text-center">
           <h4>Esta aplicação se trata de uma paródia da técnica Pomodoro</h4>
           <p>
-            A ideia nasceu de um post no Twitter, aonde vi uma piada sobre a "técnica rodomopo", 5 minutos trabalhando e
+            A ideia nasceu de um post no Twitter, aonde vi uma piada sobre a &quot;técnica rodomopo&quot;, 5 minutos trabalhando e
             15 descansando
           </p>
           <p>
