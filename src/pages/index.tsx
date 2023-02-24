@@ -3,7 +3,9 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import logo from "/public/logo.png";
 
-
+interface ITypeBG {
+  [index: string]: string;
+}
 
 export default function Home() {
   const audioRef = useRef<HTMLAudioElement>(null);
@@ -15,6 +17,10 @@ export default function Home() {
   const [count, setCount] = useState(0);
   const [title, setTitle] = useState("Rodomopo");
 
+  const typeBg = {} as ITypeBG;
+  typeBg["w"] = "bg-violet-700";
+  typeBg["b"] = "bg-violet-500";
+  typeBg["lw"] = "bg-violet-300";
 
   useEffect(() => {
     let interval: any = null;
@@ -39,6 +45,10 @@ export default function Home() {
   }, [isActive, timer]);
 
   const handleStartCount = () => {
+    if (isActive) {
+      setIsActive(false);
+      return;
+    }
     // Se tipo == ciclo então 5 min, se não 15 min
     const qtd = type === "w" ? 5 * 6000 : 15 * 60000;
     const intervalDate = new Date(new Date().getTime() + qtd);
@@ -157,14 +167,15 @@ export default function Home() {
                 Ciclo Longo
               </button>
             </div>
+            <span className="font-bold text-2xl text-violet-900">{count} ciclos</span>
             <span className="text-5xl bg-violet-900 border-2 border-violet-400 rounded-full p-12 px-16 text-white">
               {formatTimer()}
             </span>
             <button
-              className="rounded-full font-bold text-white bg-purple-900 w-1/5 p-4 transition-all hover:scale-125 hover:bg-purple-700"
+              className="rounded-full font-bold text-white bg-violet-900 w-1/5 p-4 transition-all hover:scale-125 hover:bg-violet-700"
               onClick={handleStartCount}
             >
-              Iniciar
+              {isActive ? "Parar" : "Iniciar"}
             </button>
             <div className="text-center text-purple-900 text-xl">
               <h5>Pomodoro reverso</h5>
